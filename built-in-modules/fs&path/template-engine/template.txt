@@ -1,0 +1,9 @@
+Hello {{name}},
+
+Welcome to {{company}}!
+We are happy to have you in {{city}}.
+
+Your role is: {{role}}
+
+Best regards,
+{{company}} Team
