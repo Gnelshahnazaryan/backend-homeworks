@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Wireless Mouse",
+    "description": "A smooth and responsive wireless mouse with ergonomic design.",
+    "price": 25.99,
+    "stock_quantity": 120
+  },
+  {
+    "id": 2,
+    "name": "Mechanical Keyboard",
+    "description": "RGB backlit mechanical keyboard with blue switches.",
+    "price": 79.99,
+    "stock_quantity": 60
+  },
+  {
+    "id": 3,
+    "name": "Gaming Headset",
+    "description": "Surround sound gaming headset with noise cancellation.",
+    "price": 49.5,
+    "stock_quantity": 85
+  },
+  {
+    "id": 4,
+    "name": "USB-C Charger",
+    "description": "Fast charging USB-C adapter for laptops and phones.",
+    "price": 19.99,
+    "stock_quantity": 200
+  },
+  {
+    "id": 5,
+    "name": "Laptop Stand",
+    "description": "Adjustable aluminum laptop stand for better ergonomics.",
+    "price": 34.75,
+    "stock_quantity": 40
+  }
+]
