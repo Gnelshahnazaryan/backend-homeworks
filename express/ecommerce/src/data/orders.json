@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "user_id": 1,
+    "order_date": "2026-05-17T10:30:00.000Z",
+    "total_amount": 2599.98,
+    "status": "pending",
+    "items": [
+      {
+        "product_id": 101,
+        "quantity": 1,
+        "price": 1999.99
+      },
+      {
+        "product_id": 102,
+        "quantity": 2,
+        "price": 300
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "user_id": 2,
+    "order_date": "2026-05-16T15:45:00.000Z",
+    "total_amount": 899.99,
+    "status": "shipped",
+    "items": [
+      {
+        "product_id": 103,
+        "quantity": 1,
+        "price": 899.99
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "user_id": 1,
+    "order_date": "2026-05-15T08:20:00.000Z",
+    "total_amount": 0,
+    "status": "cancelled",
+    "items": []
+  },
+  {
+    "id": 4,
+    "user_id": 2,
+    "order_date": "2026-05-17T13:17:13.890Z",
+    "total_amount": 131.97,
+    "status": "pending",
+    "items": [
+      {
+        "product_id": 1,
+        "quantity": 2,
+        "price": 51.98
+      },
+      {
+        "product_id": 2,
+        "quantity": 1,
+        "price": 79.99
+      }
+    ]
+  }
+]
