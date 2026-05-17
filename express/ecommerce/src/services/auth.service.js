@@ -2,12 +2,18 @@ const jwt = require("jsonwebtoken");
 const AppError = require("../utils/appError");
 const { writeJSON } = require("../utils/file.js");
 const { getAllUsers } = require("./user.service.js");
+const { isEmailExists } = require("../services/user.service.js");
 
 const FILE_NAME = "users.json";
 
 async function registerUser(data) {
     try {
         const users = await getAllUsers();
+        const exists = await isEmailExists(data.email);
+
+        if(exists) {
+            throw new AppError("Email exists",409);
+        }
 
         const newUser = {
             id: users.length + 1,
@@ -22,7 +28,7 @@ async function registerUser(data) {
 
         return newUser;
     } catch (err) {
-        throw new Error(`Registration failed: ${err.message}`);
+        throw err;
     }
 }
 
