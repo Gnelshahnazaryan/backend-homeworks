@@ -5,26 +5,33 @@ function basicAuthMiddleware(req, res, next) {
 
     if (!authHeader) {
         res.set("WWW-Authenticate", 'Basic realm="Secure Area"');
-        res.status(401).send("Authentication Required");
+        return res.status(401).send("Authentication Required");
     }
 
     const token = authHeader.split(" ")[1];
 
     try {
+        const token = authHeader.split(" ")[1];
+
         const decodedCredentials = Buffer.from(token, "base64").toString(
             "utf-8",
         );
         const [username, password] = decodedCredentials.split(":");
 
-        for (const user of users) {
-            if (username === user.username && password === user.password) {
-                req.user = user;
-                next();
-            }
+        const user = users.find(
+            (u) => u.username === username && u.password === password,
+        );
+
+        if (!user) {
+            return res
+                .status(401)
+                .json({ error: "Invalid username or password" });
         }
-        res.status(401).json({ error: "Invalid username or password" });
+
+        req.user = user;
+        return next();
     } catch (err) {
-        res.status(400).json({ error: "Malformed token" });
+        return res.status(400).json({ error: "Malformed token" });
     }
 }
 
